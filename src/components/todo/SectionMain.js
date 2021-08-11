@@ -1,18 +1,18 @@
 import { TodoList } from "./TodoList";
 import React from "react";
+import PropTypes from 'prop-types';
+import TodoItem from "./TodoItem";
 
 export class SectionMain extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {todos: props}
-        console.log(this.state);
-    }
-
     render() {
         return (
             <section className='section'>
-                <TodoList />
+                <TodoList obj={this.props.obj}/>
             </section>
         )
     }
+}
+
+TodoItem.propTypes = {
+    obj: PropTypes.object,
 }

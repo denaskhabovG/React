@@ -7,7 +7,6 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {todos: []};
-
     }
 
     handleTodos = (text) => {
@@ -19,8 +18,6 @@ export class App extends React.Component {
         this.setState({
             todos: [{...todo, text}, ...this.state.todos]
         });
-
-        console.log({...todo, text})
     }
 
     render() {
