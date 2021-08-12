@@ -11,13 +11,16 @@ const styles = {
 
 export class TodoList extends React.Component {
     render() {
-        const todoItems = this.props.obj.map((item) => {
-            return item;
-        })
+        const todoItem = this.props.obj.map(item => {
+            return <TodoItem
+                completeTodo={this.props.completeTodo}
+                deleteTodo={this.props.deleteTodo}
+                item={item} key={item.id}/>
+        });
 
         return (
             <ul style={styles.ul} className='todo-list'>
-                <TodoItem item={todoItems}/>
+                {todoItem}
             </ul>
         )
     }

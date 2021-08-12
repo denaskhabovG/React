@@ -9,7 +9,7 @@ export class App extends React.Component {
         this.state = {todos: []};
     }
 
-    handleTodos = (text) => {
+    handleTodos = text => {
         const todo = {
             done: false,
             id: (Math.random() * 15.75).toFixed(2),
@@ -20,11 +20,29 @@ export class App extends React.Component {
         });
     }
 
+    handleCompletedTodo = id => {
+        const todoIndex = this.state.todos.findIndex(item => item.id === id);
+        this.state.todos[todoIndex].done = !this.state.todos[todoIndex].done;
+
+        this.setState({
+            todos: [...this.state.todos]
+        });
+    }
+
+    handleDeleteTodo = id => {
+        const itemId = id;
+        const newTodos = this.state.todos.filter(item => item.id !== itemId);
+
+        this.setState({
+            todos: newTodos
+        });
+    }
+
     render() {
         return (
             <div className="App">
                 <Header func={this.handleTodos}/>
-                <SectionMain obj={this.state.todos}/>
+                <SectionMain deleteTodo={this.handleDeleteTodo} completedTodo={this.handleCompletedTodo} obj={this.state.todos}/>
             </div>
         );
     }

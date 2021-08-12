@@ -7,7 +7,7 @@ export class SectionMain extends React.Component{
     render() {
         return (
             <section className='section'>
-                <TodoList obj={this.props.obj}/>
+                <TodoList deleteTodo={this.props.deleteTodo} completeTodo={this.props.completedTodo} obj={this.props.obj}/>
             </section>
         )
     }
