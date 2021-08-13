@@ -53,18 +53,17 @@ export class App extends React.Component {
         const allNotDone = this.state.todos.every(item => !item.done);
         let completeTodos;
 
-        const mapAllTodos = bool => {
+        const mapAllTodos = isInverting => {
             completeTodos = this.state.todos.map(item => {
-                bool ? item.done = bool : item.done = !item.done;
+                item.done = isInverting ? !item.done : true;
                 return item;
             });
         }
 
         if (allDone || allNotDone) {
-            mapAllTodos(false);
-
-        } else  {
             mapAllTodos(true);
+        } else  {
+            mapAllTodos(false);
         }
 
         this.setState({
