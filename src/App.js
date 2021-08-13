@@ -55,7 +55,7 @@ export class App extends React.Component {
 
         const mapAllTodos = bool => {
             completeTodos = this.state.todos.map(item => {
-                bool ? item.done = bool : item.done = !item.done;
+                item.done = bool ? bool : !item.done
                 return item;
             });
         }
