@@ -1,10 +1,6 @@
 import React from "react";
+import './styles.css';
 
-const  styles = {
-    input: {
-        boxShadow: '0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%)'
-    }
-}
 export  class TodoInput extends React.Component {
     constructor(props) {
         super(props);
@@ -31,7 +27,7 @@ export  class TodoInput extends React.Component {
 
     render() {
         return (
-            <input style={styles.input} onKeyPress={this.handleSubmit} defaultValue={this.state.value} onChange={this.handleChange} className='header__input' type="text" />
+            <input onKeyPress={this.handleSubmit} defaultValue={this.state.value} onChange={this.handleChange} className='header__input' type="text" />
         )
     }
 }

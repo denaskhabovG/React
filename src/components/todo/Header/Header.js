@@ -1,6 +1,7 @@
-import { TodoTitle } from "./TodoTitle";
-import { TodoInput } from "./TodoInput";
 import React from "react";
+import { TodoTitle } from "../TodoTitle/TodoTitle";
+import { TodoInput } from "../TodoInput/TodoInput";
+import './styles.css';
 
 export class Header extends React.Component {
     render() {
