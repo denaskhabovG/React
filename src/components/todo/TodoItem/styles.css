@@ -1,0 +1,9 @@
+.todo-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: -1px;
+    font-size: 2rem;
+}

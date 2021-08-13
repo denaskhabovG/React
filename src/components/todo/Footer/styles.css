@@ -1,0 +1,38 @@
+.footer {
+    padding: 10px;
+}
+
+.footer__info {
+    margin-right: 30px;
+}
+
+.footer__btn {
+    margin-right: 10px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.completed-all::before,
+.completed-all::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 2px;
+    height: 15px;
+    background-color: black;
+}
+
+.completed-all::before {
+    left: 20px;
+    transform: rotate(-45deg);
+}
+
+.completed-all::after {
+    left: 30px;
+    transform: rotate(45deg);
+}
+.completed-all__checkbox {
+    position: absolute;
+    visibility: hidden;
+}
